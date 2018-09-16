@@ -1,0 +1,74 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/* reset margin and padding so browsers don't add their own to any of the elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* borders and padding no longer added to total height specified for the box */
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px; /* puts a white border around the entire page */
+}
+
+.header {
+    height: 95vh; /* 95% of viewport height */
+    background-image: 
+        linear-gradient(
+            to right bottom, 
+            rgba(126, 213, 111, 0.8), 
+            rgba(40, 180, 131, 0.8)), 
+            url(../img/hero.jpg); /* two images on top of each other */
+    background-size: cover; /* fits element inside width of the box */
+    background-position: top; /* ensures top of image always stays at top of container */
+    position: relative; /* needed to act as parent element for absolute psoitioning of the logo-box */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%) /* coords to show clockwise from top left (see https://bennettfeely.com/clippy/ for code for different polygon shapes */
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+}
