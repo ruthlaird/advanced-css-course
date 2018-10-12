@@ -8,19 +8,28 @@ Dark green: #28b485
 */
 
 /* reset margin and padding so browsers don't add their own to any of the elements */
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* borders and padding no longer added to total height specified for the box */
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; /* assumes the user's default font-size is 16px 
+    and as we want 10px we specify it as a percentage of that 
+    so that if the user has a bigger default font size they will still be able to see the site ok */
 }
 
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.7;
     color: #777;
-    padding: 30px; /* puts a white border around the entire page */
+    padding: 3rem; /* puts a white border around the entire page */
+    box-sizing: border-box; /* borders and padding no longer added to total height specified for the box */
 }
 
 .header {
@@ -39,12 +48,12 @@ body {
 
 .logo-box {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
 .logo {
-    height: 35px;
+    height: 3.5rem;
 }
 
 .text-box {
@@ -52,23 +61,137 @@ body {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center; /* makes the button centered within the text box */
 }
 
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
+
+    backface-visibility: hidden; /* hack to stop shaking in animation */
+    margin-bottom: 6rem;
 }
 
 .heading-primary-main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; /* starts faster and gets slower */
+
+    /*
+    animation-delay: 3s;
+    animation-iteration-count: 3;
+    */
 }
 
 .heading-primary-sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.75rem;
+
+    animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0; /* invisible */
+        transform: translateX(-10rem); /* change x starting position */
+    }
+
+    80% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0; /* invisible */
+        transform: translateX(10rem); /* change x starting position */
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0; /* invisible */
+        transform: translateY(3rem); /* change y starting position */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2) /* shadow of 10px on y axis only, 20px blur, black with 0.2 opacity */
+}
+
+/* active is the psuedo class when a button has been clicked */
+.btn:active {
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2)
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+/* hidden under the btn initially */
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* puts it behind the btn element */
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6); /* increases the size element size */
+    opacity: 0; /* makes it fade out */
+}
+
+.btn-animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards; /* automatically applies the styles of the 0% before the animation starts */
 }
