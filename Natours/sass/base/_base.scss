@@ -1,0 +1,19 @@
+/* reset margin and padding so browsers don't add their own to any of the elements */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    //This defines what 1 rem is
+    font-size: 62.5%; /* assumes the user's default font-size is 16px 
+    and as we want 10px we specify it as a percentage of that 
+    so that if the user has a bigger default font size they will still be able to see the site ok */
+}
+
+body {
+    box-sizing: border-box; /* borders and padding no longer added to total height specified for the box */
+}

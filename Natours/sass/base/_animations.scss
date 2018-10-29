@@ -1,0 +1,43 @@
+@keyframes moveInLeft {
+    0% {
+        opacity: 0; /* invisible */
+        transform: translateX(-10rem); /* change x starting position */
+    }
+
+    80% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0; /* invisible */
+        transform: translateX(10rem); /* change x starting position */
+    }
+
+    80% {
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0; /* invisible */
+        transform: translateY(3rem); /* change y starting position */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
