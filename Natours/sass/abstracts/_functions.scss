@@ -1,0 +1,12 @@
+@function calcColWidth($numCols, $totalCols) {
+    //100% of the width minus the gutter(s) between the columns, divided by the number of columns
+    //where numCols > 1, add the gutter horizontals
+    @return calc(
+        #{$numCols}
+        * 
+        ((100% - ( #{$gutter-horizontal} * calc(#{$totalCols} - 1) ) ) / #{$totalCols})
+        
+        + 
+         ( calc(#{$numCols} - 1) * #{$gutter-horizontal} )
+    );
+}
