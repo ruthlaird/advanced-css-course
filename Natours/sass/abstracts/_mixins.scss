@@ -7,3 +7,21 @@
         clear: both; //clears both left and right floats
     }
 }
+
+@mixin textWithGradientColor($start-color, $end-color) {
+    display: inline-block; //so color only takes up width of the text
+    background-image: linear-gradient(to right, start-color, $end-color); //spread the color from light to dark
+    -webkit-background-clip: text; //clips the background image exactly where the text is
+    color: transparent; //hides the text, so that you see the background image instead, which is in effect the coloured text with the gradient applied
+
+}
+
+@mixin imagesOverlaid($start-color, $end-color, $image-url) {
+    background-image: 
+    linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)), 
+        url(../img/hero.jpg); /* two images on top of each other */
+    background-size: cover; /* fits element inside width of the box */
+}

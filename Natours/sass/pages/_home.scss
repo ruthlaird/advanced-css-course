@@ -3,3 +3,14 @@
     padding: 25rem 0;
     margin-top: -20vh; //to move the section up to cover the polygon from the header section (whose overall height is 95vh and polygon height is 75vh is 75vh)
 }
+
+.section-features {
+    padding: 20rem 0;
+    @include imagesOverlaid($color-primary-light, $color-primary-dark, "../img/nat-4.jpg");
+    margin-top: -10rem;
+    transform: skewY(-7deg);
+
+    & > * { // selects all direct child elements
+        transform: skewY(7deg);
+    }     
+}

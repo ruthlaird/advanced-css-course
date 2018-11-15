@@ -44,10 +44,7 @@ body {
     font-size: 3.5rem;
     text-transform: uppercase;
     font-weight: 700;
-    display: inline-block; //so color only takes up width of the text
-    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark); //spread the color from light to dark
-    -webkit-background-clip: text; //clips the background image exactly where the text is
-    color: transparent; //hides the text, so that you see the background image instead, which is in effect the coloured text with the gradient applied
+    @include textColorWithGradient($color-primary-light, $color-primary-dark);
     letter-spacing: .2rem;
     transition: all .2s;
 
