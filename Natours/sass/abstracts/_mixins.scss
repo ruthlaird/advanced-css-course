@@ -10,7 +10,7 @@
 
 @mixin textWithGradientColor($start-color, $end-color) {
     display: inline-block; //so color only takes up width of the text
-    background-image: linear-gradient(to right, start-color, $end-color); //spread the color from light to dark
+    background-image: linear-gradient(to right, $start-color, $end-color); //spread the color from light to dark
     -webkit-background-clip: text; //clips the background image exactly where the text is
     color: transparent; //hides the text, so that you see the background image instead, which is in effect the coloured text with the gradient applied
 
