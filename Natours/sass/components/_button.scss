@@ -36,6 +36,15 @@
         }
     }
 
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
+        }
+    }
+
     /* hidden under the btn initially */
     &::after {
         content: "";
