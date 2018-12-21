@@ -13,6 +13,23 @@
         <title>Natours | Exciting tours for adventurous people</title>
     </head>
     <body>
+        <div class="navigation">
+            <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+            <label for="navi-toggle" class="navigation__button">
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
+            <div class="navigation__background">&nbsp;</div>
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a href="#about" class="navigation__link"><span>01</span>About Natours</a></li>
+                    <li class="navigation__item"><a href="#benefits" class="navigation__link"><span>02</span>Your benefits</a></li>
+                    <li class="navigation__item"><a href="#tours" class="navigation__link"><span>03</span>Popular tours</a></li>
+                    <li class="navigation__item"><a href="#stories" class="navigation__link"><span>04</span>Stories</a></li>
+                    <li class="navigation__item"><a href="#book" class="navigation__link"><span>05</span>Book now</a></li>
+                </ul>
+            </nav>
+        </div>
+
         <header class="header">
             <div class="header__logo-box">
                 <img src="img/logo-white.png" alt="Logo" class="header__logo">
@@ -29,7 +46,7 @@
         </header>
 
         <main>
-            <section class="section-about">
+            <section id="about" class="section-about">
                 <div class="u-center-text u-margin-bottom-big">
                     <h2 class="heading-secondary">
                         Exciting tours for adventurous people
@@ -64,7 +81,7 @@
                 </div>
             </section>
 
-            <section class="section-features">
+            <section id="benefits" class="section-features">
 
                 <div class="row">
                     <div class="col-1-of-4">
@@ -78,38 +95,38 @@
                     </div>
 
                     <div class="col-1-of-4">
-                            <div class="feature-box">
-                                <i class="feature-box__icon icon-basic-compass"></i>
-                                <h3 class="heading-tertiary u-margin-bottom-small">Meet nature</h3>
-                                <p class="feature-box__text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus distinctio iusto dolorum voluptatem numquam vitae recusandae unde, corporis ducimus, quod repellendus reprehenderit laborum provident accusantium.
-                                </p>
-                            </div>
+                        <div class="feature-box">
+                            <i class="feature-box__icon icon-basic-compass"></i>
+                            <h3 class="heading-tertiary u-margin-bottom-small">Meet nature</h3>
+                            <p class="feature-box__text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus distinctio iusto dolorum voluptatem numquam vitae recusandae unde, corporis ducimus, quod repellendus reprehenderit laborum provident accusantium.
+                            </p>
+                        </div>
                     </div>
 
                     <div class="col-1-of-4">
-                            <div class="feature-box">
-                                <i class="feature-box__icon icon-basic-map"></i>
-                                <h3 class="heading-tertiary u-margin-bottom-small">Find your way</h3>
-                                <p class="feature-box__text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus distinctio iusto dolorum voluptatem numquam vitae recusandae unde, corporis ducimus, quod repellendus reprehenderit laborum provident accusantium.
-                                </p>
-                            </div>
+                        <div class="feature-box">
+                            <i class="feature-box__icon icon-basic-map"></i>
+                            <h3 class="heading-tertiary u-margin-bottom-small">Find your way</h3>
+                            <p class="feature-box__text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus distinctio iusto dolorum voluptatem numquam vitae recusandae unde, corporis ducimus, quod repellendus reprehenderit laborum provident accusantium.
+                            </p>
+                        </div>
                     </div>
 
                     <div class="col-1-of-4">
-                            <div class="feature-box">
-                                <i class="feature-box__icon icon-basic-heart"></i>
-                                <h3 class="heading-tertiary u-margin-bottom-small">Live a healthier life</h3>
-                                <p class="feature-box__text">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus distinctio iusto dolorum voluptatem numquam vitae recusandae unde, corporis ducimus, quod repellendus reprehenderit laborum provident accusantium.
-                                </p>
-                            </div>
+                        <div class="feature-box">
+                            <i class="feature-box__icon icon-basic-heart"></i>
+                            <h3 class="heading-tertiary u-margin-bottom-small">Live a healthier life</h3>
+                            <p class="feature-box__text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus distinctio iusto dolorum voluptatem numquam vitae recusandae unde, corporis ducimus, quod repellendus reprehenderit laborum provident accusantium.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="section-tours">
+            <section id="tours" class="section-tours">
                 <div class="u-center-text u-margin-bottom-big">
                     <h2 class="heading-secondary">
                         Most popular tours
@@ -224,7 +241,7 @@
                 </div>
             </section>
 
-            <section class="section-stories">
+            <section id="stories" class="section-stories">
                 <div class="bg-video">
                     <video class="bg-video__content" autoplay muted loop>
                         <source src="img/video.mp4" type="video/mp4">
@@ -278,7 +295,7 @@
                 </div>
             </section>
 
-            <section class="section-book">
+            <section id="book" class="section-book">
                 <div class="row">
                     <div class="book">
                         <div class="book__form">

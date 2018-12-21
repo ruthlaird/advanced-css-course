@@ -132,10 +132,7 @@
 
     // BACK SIDE STYLING
     &__cta {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include centerHorizontalVertical;
         width: 90%; //need to set this so that the button within it doesn't get squished
         text-align: center;
     }

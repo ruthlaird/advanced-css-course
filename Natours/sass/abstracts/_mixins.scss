@@ -25,3 +25,10 @@
         url(../img/hero.jpg); /* two images on top of each other */
     background-size: cover; /* fits element inside width of the box */
 }
+
+@mixin centerHorizontalVertical {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
