@@ -1,0 +1,16 @@
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1; //low number to ensure it's behind all the other elements
+    opacity: .15;
+    overflow: hidden; //stops the video overflowing it's parent element
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover; //element fills the entire parent while maintaining it's aspect ratio
+    }
+}
