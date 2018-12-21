@@ -14,7 +14,7 @@
         left: 0;
         width: 100%;
         backface-visibility: hidden; // hides the back part of the element as we have 2 elements on top of each other this has the effect of only showing one at once
-        border-radius: 3px;
+        border-radius: $default-border-radius;
         overflow: hidden; // hides the part that overflows (ensures the image don't cover up the rounded border)
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
@@ -55,8 +55,8 @@
         background-blend-mode: screen;
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        border-top-left-radius: 3px;  //clip-path has removed the border-radiuses set in the parent so need to re-add them
-        border-top-right-radius: 3px;
+        border-top-left-radius: $default-border-radius;  //clip-path has removed the border-radiuses set in the parent so need to re-add them
+        border-top-right-radius: $default-border-radius;
 
         &--1 {
             background-image: linear-gradient(to right, $color-secondary-light, $color-secondary-dark),
