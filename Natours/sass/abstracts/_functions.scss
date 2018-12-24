@@ -1,6 +1,9 @@
 @function calcColWidth($numCols, $totalCols) {
     //100% of the width minus the gutter(s) between the columns, divided by the number of columns
     //where numCols > 1, add the gutter horizontals
+
+    //calc function allows you to mix units
+    //have to put sass functions inside #{}
     @return calc(
         #{$numCols}
         * 

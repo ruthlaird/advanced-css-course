@@ -21,11 +21,21 @@
         opacity: 0;
         transform: translate(-50%, -50%) scale(.25);
         transition: all .4s .2s; //the 2nd timing is a delay before the transition starts
+    
+        @include respond(phone) {
+            width: 90%;
+        }
+    
     }
 
     &__left {
         width: 33.333333333333%;
         display: table-cell;
+
+        @include respond(tab-port) {
+            vertical-align: middle;
+            padding-left: 2rem;
+        }
     }
 
     &__right {
@@ -33,6 +43,10 @@
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;
+
+        @include respond(tab-port) {
+            padding: 3rem;
+        }
     }
 
     &__img {
