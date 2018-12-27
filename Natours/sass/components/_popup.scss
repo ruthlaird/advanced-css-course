@@ -23,7 +23,7 @@
         transition: all .4s .2s; //the 2nd timing is a delay before the transition starts
     
         @include respond(phone) {
-            width: 90%;
+            width: 80%;
         }
     
     }

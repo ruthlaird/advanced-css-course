@@ -20,9 +20,9 @@
     background-image: 
     linear-gradient(
         to right bottom, 
-        rgba($color-primary-light, 0.8), 
-        rgba($color-primary-dark, 0.8)), 
-        url(../img/hero.jpg); /* two images on top of each other */
+        rgba($start-color, 0.8), 
+        rgba($end-color, 0.8)), 
+        url($image-url); /* two images on top of each other */
     background-size: cover; /* fits element inside width of the box */
 }
 

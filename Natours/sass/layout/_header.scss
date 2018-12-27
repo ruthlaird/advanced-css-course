@@ -1,10 +1,15 @@
 .header {
     height: 95vh; /* 95% of viewport height */
-    @include imagesOverlaid($color-primary-light, $color-primary-dark, "../img/hero.jpg");
+    @include imagesOverlaid($color-primary-light, $color-primary-dark, "../img/hero-small.jpg");
     background-position: top; /* ensures top of image always stays at top of container */
     position: relative; /* needed to act as parent element for absolute psoitioning of the logo-box */
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* coords to show clockwise from top left (see https://bennettfeely.com/clippy/ for code for different polygon shapes */
+
+    @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (min-width: 125em) {
+        @include imagesOverlaid($color-primary-light, $color-primary-dark, "../img/hero.jpg"); 
+    }
 
     @include respond(phone) {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
