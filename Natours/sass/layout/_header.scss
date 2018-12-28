@@ -1,12 +1,18 @@
 .header {
-    height: 95vh; /* 95% of viewport height */
+    height: 85vh; /* 85% of viewport height */
     @include imagesOverlaid($color-primary-light, $color-primary-dark, "../img/hero-small.jpg");
     background-position: top; /* ensures top of image always stays at top of container */
     position: relative; /* needed to act as parent element for absolute psoitioning of the logo-box */
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* coords to show clockwise from top left (see https://bennettfeely.com/clippy/ for code for different polygon shapes */
+
+    @supports (clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* coords to show clockwise from top left (see https://bennettfeely.com/clippy/ for code for different polygon shapes */    
+        height: 95vh; /* 95% of viewport height */
+    }
+
 
     @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), //needed for safari
         (min-width: 125em) {
         @include imagesOverlaid($color-primary-light, $color-primary-dark, "../img/hero.jpg"); 
     }

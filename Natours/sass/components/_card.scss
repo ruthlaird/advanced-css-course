@@ -13,6 +13,7 @@
         top: 0;
         left: 0;
         width: 100%;
+        -webkit-backface-visibility: hidden;
         backface-visibility: hidden; // hides the back part of the element as we have 2 elements on top of each other this has the effect of only showing one at once
         border-radius: $default-border-radius;
         overflow: hidden; // hides the part that overflows (ensures the image don't cover up the rounded border)
