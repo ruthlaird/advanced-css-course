@@ -51,9 +51,9 @@
 
     // FRONT SIDE STYLING
     &__picture {
-        background-size: cover;
+        background-size: cover; //Scales the image as large as possible without stretching the image
         height: 23rem;
-        background-blend-mode: screen;
+        background-blend-mode: screen;  //how an element's background images should blend with each other and with the element's background color
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         border-top-left-radius: $default-border-radius;  //clip-path has removed the border-radiuses set in the parent so need to re-add them
