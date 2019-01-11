@@ -26,10 +26,15 @@
     background-color: var(--color-grey-dark-1);
 
     flex: 0 0 18%; //don't grow or shrink and width is 18%
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  //This has the effect of pushing the legal text to the bottom
 }
 
 .hotel-view {
     background-color: var(--color-white);
 
     flex: 1; //grow as much as it can
+
+    height: 80rem;
 }
