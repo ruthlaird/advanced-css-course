@@ -8,10 +8,19 @@
     padding-top: 4rem;
 
     display: grid;
-    grid-template-rows: 1fr min-content 6rem 1fr;  //using 1fr to allow row to take up remaining space and therefore be dynamic when viewport height changes
-    grid-template-columns: max-content;
+    grid-template-rows: 1fr min-content min-max(6rem, min-content) 1fr;  //using 1fr to allow row to take up remaining space and therefore be dynamic when viewport height changes
+    grid-template-columns: min-max(min-content, max-content); //using min max to be responsive when screen size reduces
     grid-row-gap: 1.5rem;
     justify-content: center;
+
+    @media only screen and (max-width: $bp-medium) {
+        //change to make header take up full width
+        grid-column: 1 / -1;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        padding: 5rem;
+    }
 
     &__logo {
         height: 3rem;
@@ -46,9 +55,11 @@
         grid-template-columns: repeat(4, 1fr);
         grid-column-gap: 3rem;
         justify-items: center;
+        align-items: center;
 
         img {
-            height: 2.5rem;
+            max-height: 2.5rem;  //set to max height to allow it to reduce size when screen size reduces
+            max-width: 100%; //need to specify max-width along with max-width to allow it to scale correctly
             filter: brightness(70%);
         }
     }

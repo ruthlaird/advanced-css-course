@@ -9,12 +9,26 @@
     justify-items: center;
     grid-row-gap: 2rem;
 
+    @media only screen and (max-width: $bp-medium) {
+        //change to make realtors take up full width
+        grid-column: 1 / -1;
+    }
+
     &__list {
         display: grid;
         grid-template-columns: min-content max-content;
         grid-column-gap: 2rem;
         grid-row-gap: 5vh; //5% of the viewport height
         align-items: center;
+
+        @media only screen and (max-width: $bp-medium) {
+            //change to make place realtors side by side
+            grid-template-columns: repeat(3, min-content max-content);
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            grid-template-columns: min-content max-content;
+        }
     }
 
     &__img {

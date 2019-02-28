@@ -14,6 +14,12 @@ $color-grey-dark-2: #6D5D4B;
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em;  //1200(px) / 16 (default browser font-size)
+$bp-large: 62.5em;  //1000px
+$bp-medium: 50em;   //800px
+$bp-small: 37.5em;  //600px
+
 *,
 *::before,
 *::after {
@@ -25,6 +31,10 @@ $font-display: 'Josefin Sans', sans-serif;
 html {
     box-sizing: border-box;
     font-size: 62.5%; //10px/16px (16px is the browser default) = 62/5% -> 1rem = 10px
+
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%; //1rem = 8px;
+    }
 }
 
 body {
@@ -40,4 +50,20 @@ body {
     grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
         [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end]
         minmax(6rem, 1fr) [full-end];
+
+    @media only screen and (max-width: $bp-large) {
+        //switch sidebar to top by adding a row and removing a column
+        grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(6rem, 1fr)
+            [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end]
+            minmax(6rem, 1fr) [full-end];
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        //add the realtors below the header by adding a row
+        //and increasing header to take up 100% of viewport height (minus the 6rem taken up by the sidebar)
+        //automatic placement algorithm will take care of the other rows
+        //and will apply mincontent to them so don't need to specifically specify this for the remaining rows
+        grid-template-rows: 6rem calc(100vh - 6rem);
+    }
 }
